@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int T,N,A,B,C,D,P,Q,Y,i,j,train,walk;
+	cin >>T;
+	while(T--){
+		cin>>N>>A>>B>>C>>D>>P>>Q>>Y;
+		int x[N];
+		for(i=0;i<N;i++)
+			cin >> x[i];
+		walk= (fabs(x[A-1]-x[B-1])*P);
+		if((fabs(x[C-1]-x[A-1])*P)<=Y){
+			train = Y+(fabs(x[C-1]-x[D-1])*Q)+(fabs(x[D-1]-x[B-1])*P);
+			cout << min(train,walk)<<endl;
+		}
+		else
+			cout<<walk<<endl;
+	}
+	return 0;
+}
