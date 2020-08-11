@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define TEZ ios_base::sync_with_stdio(false); cin.tie(NULL) ; cout.tie(NULL);
+typedef long long ll;
+
+int gcd(int a, int b) {
+	if (b == 0) return a;
+	else return gcd(b, a % b);
+}
+
+int main()
+{
+#ifndef ONLINE_JUDGE
+	freopen("input", "r", stdin);
+	freopen("output", "w", stdout);
+#endif
+	TEZ;
+	ll t;
+	cin >> t;
+	while (t--) {
+		ll a, b;
+		cin >> a >> b;
+		ll ans;
+		if (a > b) ans = gcd(a, b);
+		else ans = gcd(b, a);
+		cout << ans << " " << (a * b) / ans << endl;
+	}
+	return 0;
+}
